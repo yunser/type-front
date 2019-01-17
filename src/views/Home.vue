@@ -22,25 +22,37 @@
                             },
                             {
                                 name: '键盘指法练习',
+                                desc: '开发中',
+                                icon: '/static/img/keyboard.svg',
+                                to: '/keyboard_typing'
+                            },
+                            {
+                                name: '键盘指法练习',
+                                desc: '开发中',
+                                icon: '/static/img/keyboard.svg',
+                                to: '/keyboard'
+                            },
+                            {
+                                name: '键盘指法练习',
                                 desc: '',
                                 icon: '/static/img/keyboard.svg',
                                 to: '12',
                                 href: 'https://demo2.yunser.com/type_keyboard/',
                                 target: '_blank'
                             },
-                            // {
-                            //     name: '在线打字练习',
-                            //     desc: '',
-                            //     icon: '/static/img/keyboard.svg',
-                            //     to: '12',
-                            //     href: 'https://demo2.yunser.com/type/',
-                            //     target: '_blank'
-                            // },
                             {
                                 name: '在线打字练习',
                                 desc: '',
                                 icon: '/static/img/keyboard.svg',
                                 to: '/type'
+                            },
+                            {
+                                name: '打字游戏',
+                                desc: '',
+                                icon: '/static/img/keyboard.svg',
+                                to: '12',
+                                href: 'https://demo2.yunser.com/typing_game/',
+                                target: '_blank'
                             }
                         ]
                     },
@@ -52,6 +64,18 @@
                                 desc: '',
                                 icon: '/static/img/keyboard.svg',
                                 to: '/wubi/table'
+                            },
+                            {
+                                name: '双拼方案',
+                                desc: '',
+                                icon: '/static/img/keyboard.svg',
+                                to: '/shuangpin/table'
+                            },
+                            {
+                                name: '标准键位指法图',
+                                desc: '',
+                                icon: '/static/img/keyboard.svg',
+                                to: '/hand'
                             }
                         ]
                     }
@@ -60,8 +84,15 @@
                     menu: [
                         {
                             type: 'icon',
+                            icon: 'search',
+                            href: 'https://search.yunser.com?utm_source=type',
+                            target: '_blank',
+                            title: '搜索'
+                        },
+                        {
+                            type: 'icon',
                             icon: 'apps',
-                            href: 'https://app.yunser.com/',
+                            href: 'https://app.yunser.com?utm_source=type',
                             target: '_blank',
                             title: '应用'
                         }

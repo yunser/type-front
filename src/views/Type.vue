@@ -13,8 +13,8 @@
             </ul>
         </div>
         <div id="divMain" class="divMain">
-            <textarea id="txtInput" onkeyup="changeText();"></textarea>
-            <textarea class="article-tex" id="divText2"></textarea>
+            <textarea class="article-tex" id="divText2" disabled onclick="getObj('txtInput').focus();"></textarea>
+            <textarea class="article-input" id="txtInput" onkeyup="changeText();">A summary of the physical and chemical nature of life must begin, not on the Eart</textarea>
             <!-- <div id="divText" class="text" onclick="getObj('txtInput').focus();">在文字出现以前，人们就已经学会了计数，并且能够阅读没有话语的故事。人类很早就能用图形来表达自己的思想。大约在公元前3400年，美索不达米亚的工匠就依据自己的爱好再现了日常生活的场景。与此同时，在埃及，这种用刀雕刻出来的装饰清晰地表明了没有语言对叙事的影响。由于缺乏文字的记录，古埃及学的专家们至今无法确定正在交战的这两个部落的身份，以及这场战争的来龙去脉。大约公元前3300年，在美索不达米亚平原，出现了一些黏土或石质的小书板。一个数字由一道刻痕标示，后面还有人名、动物名或食物名，这样的名词是由一个图形或一个图形符号来表示的。同时，图形符号变成了概念符号。这种苏美尔文字反映了它们所表达的社会象征。埃及最早的文字大约出现在公元前3150年。这是一个用于祈祷的大型工具的碎片，也许是用来给神像的眼睛上粉的。它纪念了一位国王的胜利，国王在这里变成了一头践踏敌人的公牛。埃及的文字从一开始就是包含了三种符号的严密体系，其中某些符号还注了音。当时的人们创造这些符号，也许是为了记下一些很难用一幅简单的图形表示出来的专有名词。一只隼站在住着一条眼镜蛇的宫殿的围墙上，这种庄严的组合就是一个简单的专有名词。蛇，是用来指代一个国王名字的形象，因为国王名字的发音与蛇的发音相同。象形文字及其复杂的符号，与日常生活的要求是不相符的。于是从一开始就有一种简化的文字与之共存，这种文字能用墨水和毛笔很快地在各种各样的材料上书写下来，这种文字逐渐失去了其图形特征，离象形文字的模型越来越远。楔形文字这个词来自拉丁语的“楔子”，它并不是符号演变的开端，而是一个成果。起初，物体都是按照它们呈现出来的形态被描画下来，例如麦穗。有时是概括性的，例如用动物的头来指代动物本身，或者是象征性的，例如用女性的简化符号来指代一个妇女。但由于这种文字是写在黏土上的，所以它很快就会变形。象形文字的文本可以在几个方向上进行书写，这些文字首要的作用是写在一些纪念物上，所以它们的顺序要符合纪念物的形状和装饰。在埃及，文字与图形之间是没有界限的，比方说，这座高官的塑像以一条竖立在篮子中的蛇作为装饰，而这也可以作为一段铭文来解释。篮子意味着女主人。两臂表示食品。蛇则令人联想到一位女神——食物女神，雕像底座的文字也同时提到了这位女神的名字。这些象形文字都采用古埃及绘画的一般方法，它们只能通过缩减尺寸与图形符号区别开，因此象形文字也是真正的艺术品。装饰这个寺庙墙壁的碑文，表明了古埃及文字对美学原则的严格遵循。象形文字的排列和形状主要是为了让人悦目。而且埃及文字用来做装饰也是很常见的，同时还保留了其最初的目的，也就是使它所记载的信息能够永远流传。古埃及象形文字对后世的影响非常大，今天的我们就是继承了他们的成果。归根结底，我们今天的纸张和钢笔都只不过是从古埃及书记员的工具演化而来的。<br>							</div> -->
             <span class="span1"></span>
             <span class="span2"></span>
@@ -24,15 +24,17 @@
                 <ui-icon-button icon="close" @click="toggleDrawer" slot="left" />
                 <ui-icon-button icon="add" @click="toggleEdit" slot="right" />
             </ui-appbar>
-            <ui-list>
-                <ui-list-item
-                    :title="article.title"
-                    v-for="article, index in articles"
-                    @click="selectArticle(article)"
-                    :key="article.id">
-                    <ui-icon value="delete" slot="right" title="删除" @click.stop="removeArticle(index)" />    
-                </ui-list-item>
-            </ui-list>
+            <div class="body">
+                <ui-list>
+                    <ui-list-item
+                        :title="article.title"
+                        v-for="article, index in articles"
+                        @click="selectArticle(article)"
+                        :key="article.id">
+                        <ui-icon value="delete" slot="right" title="删除" @click.stop="removeArticle(index)" />    
+                    </ui-list-item>
+                </ui-list>
+            </div>
         </ui-drawer>
         <ui-drawer class="drawer-box" right :open="editVisible" @close="toggleEdit()">
             <ui-appbar title="添加文章">
@@ -131,87 +133,109 @@
             _this.numAll = 0;
 
             function changeText() {
+                console.clear()
                 clearText();
-                var a = getObj('txtInput').value;
-                a = a.replace(/\r\n/g, '\n');
-                var b = getObj('divText').value;
-                b = b.replace(/  /g, ' ');
-                b = b.replace(/   /g, ' ');
-                b = b.replace(/\r/g, '');
-                b = b.replace(/\n/g, '');
-                b = b.replace(/&nbsp;/g, ' ');
-                b = b.replace(/<BR>/g, '\n');
-                b = b.replace(/<br>/g, '\n');
-                var c = 18;
-                var d = 0;
-                var e = 0;
-                var f = 0;
-                var g = null;
-                for (var i = 0; i < b.length; i++) {
-                    if (i >= a.length + f) {
+                var _a = getObj('txtInput').value;
+                _a = _a.replace(/\r\n/g, '\n');
+                var templateText = getObj('divText2').value;
+                templateText = templateText.replace(/  /g, ' ');
+                templateText = templateText.replace(/   /g, ' ');
+                templateText = templateText.replace(/\r/g, '');
+                templateText = templateText.replace(/\n/g, '');
+                templateText = templateText.replace(/&nbsp;/g, ' ');
+                templateText = templateText.replace(/<BR>/g, '\n');
+                templateText = templateText.replace(/<br>/g, '\n');
+                var top = 18;
+                var left = 0;
+                var errorText = 0;
+                var _f = 0;
+                var _f2 = 0;
+                var _g = null;
+                for (var i = 0; i < templateText.length; i++) {
+                    if (i >= _a.length + _f - _f2) {
                         break
                     }
                     var color = '#7dc67d';
-                    if (a.charAt(i - f) != b.charAt(i)) {
-                        e++;
+                    console.log('比较', _a.charAt(i - _f + _f2), templateText.charAt(i))
+                    if (_a.charAt(i - _f + _f2) !== templateText.charAt(i)) {
+                        console.log('不同' + _f)
+                        errorText++;
                         color = '#f06c79'
                     }
-                    if (g && g.color != color) {
-                        addSpan(g);
-                        g = null
+                    if (_g && _g.color != color) {
+                        console.log('添加不同', _f2)
+                        addSpan(_g, _f2);
+                        _g = null
                     }
-                    if (b.charAt(i) == '\n' || b.charAt(i) == '\r') {
-                        if (b.charAt(i) == '\n') {
-                            c += 60;
-                            d = 0;
-                            addSpan(g);
-                            g = null
+                    // 换行符换行
+                    if (templateText.charAt(i) === '\n' || templateText.charAt(i) === '\r') {
+                        if (templateText.charAt(i) == '\n') {
+                            top += 60;
+                            left = 0;
+                            addSpan(_g, _f2);
+                            _g = null
                         }
                         continue
                     }
-                    var j = b.charCodeAt(i) > 255 ? 24 : 13.1;
-                    if (!g) {
-                        g = new Object();
-                        g.top = c;
-                        g.left = d;
-                        g.color = color;
-                        g.height = 24;
-                        g.width = j
+                    var width = templateText.charCodeAt(i) > 255 ? 24 : 13.1;
+                    if (!_g) {
+                        _g = new Object();
+                        _g.top = top;
+                        _g.left = left;
+                        _g.color = color;
+                        _g.height = 24;
+                        _g.width = width
                     } else {
-                        g.width += j
+                        _g.width += width
                     }
-                    d += j;
-                    if (d > getObj('divText').scrollWidth - j) {
-                        c += 60;
-                        d = 0;
-                        addSpan(g);
-                        g = null;
-                        if (b.charAt(i + 1) == ' ' || b.charAt(i + 1) == '\n') {
+                    left += width;
+                    console.log('left+')
+                    // 自然换行
+                    if (left > getObj('divText2').scrollWidth - width) {
+                        top += 60;
+                        left = 0;
+                        addSpan(_g, _f2);
+                        _g = null;
+                        // _f2 = 0
+                        console.info('啥情况')
+                        // if (templateText.charAt(i + 1) == ' ' || templateText.charAt(i + 1) == '\n') {
+                        //     i++;
+                        //     _f++
+                        //     console.log(`加了${templateText.charAt(i + 1) == '\n'}========`)
+                        // }
+                        if (templateText.charAt(i + 1) == ' ') {
+                            console.log('空格')
                             i++;
-                            f++
+                            _f++
+                            _f2++
+                            left += width;
+                        }
+                        if (templateText.charAt(i + 1) == '\n') {
+                            i++;
+                            _f++
                         }
                     }
                 }
-                if (g) {
-                    addSpan(g);
-                    g = null
+                if (_g) {
+                    addSpan(_g, _f2);
+                    _g = null
                 }
-                _this.result.rate = Math.round(100 - (e / a.length) * 100) + '%'
-                _this.result.speed = Math.round(a.length / _this.time * 60) + '字 / 分'
+                _this.result.rate = Math.round(100 - (errorText / _a.length) * 100) + '%'
+                _this.result.speed = Math.round(_a.length / _this.time * 60) + '字 / 分'
             }
 
             window.changeText = changeText
 
-            function addSpan(a) {
+            function addSpan(a, _f2) {
                 if (!a) {
                     return
                 }
                 var b = document.createElement('span');
                 b.style.position = 'absolute';
-                b.style.width = a.width + 'px';
+                b.style.width = (a.width ) + 'px';
                 b.style.height = a.height + 'px';
                 b.style.top = a.top + 'px';
-                b.style.left = a.left + 'px';
+                b.style.left = (a.left) + 'px';
                 b.style.zIndex = 1;
                 b.style.backgroundColor = a.color;
                 getObj('divMain').appendChild(b)
@@ -230,7 +254,7 @@
                     window.clearInterval(_this.autoRun)
                 }
                 var b = getObj('txtInput');
-                var c = getObj('divText');
+                var c = getObj('divText2');
                 if (!_this.typing) {
                     _this.typing = true
                     clearText();
@@ -294,10 +318,9 @@
                 b = b.replace(/\r/g, '');
                 b = b.replace(/–/g, '-');
                 b = b.replace(/\n/g, '<br>');
-                getObj('divText').value = b
+                getObj('divText2').value = b
                 b = b.replace(/  /g, ' ');
                 b = b.replace(/   /g, ' ');
-                c
                 _this.numAll = b.length;
                 _this.clearText();
                 _this.result.time = '0 秒'
@@ -334,6 +357,7 @@
     }
 }
 .drawer-box {
+    z-index: 10000000;
     width: 400px;
     max-width: 300px;
     .body {
@@ -397,7 +421,8 @@
     border: 2px solid #3eaef2;
 }
 
-.divMain textarea {
+.divMain .article-input {
+    z-index: 1000;
     word-break: break-all;
     word-wrap: break-word;
     width: 100%;
@@ -415,7 +440,7 @@
     line-height: 60px;
     font-family: Consolas;
     font-size: 24px;
-    background-color: white;
+    background-color: transparent;
 }
 
 .divMain .text {
@@ -435,7 +460,7 @@
     font-size: 24px;
 }
 .article-tex {
-    z-index: 2;
+    z-index: 100;
     word-spacing: 0px;
     letter-spacing: 0px;
     word-break: break-all;
@@ -449,6 +474,9 @@
     line-height: 60px;
     font-family: Consolas;
     font-size: 24px;
+    min-height: 500px;
+    background-color: transparent;
+    overflow: hidden;
 }
 .divMain .span1 {
     position: absolute;

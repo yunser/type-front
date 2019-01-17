@@ -3,7 +3,11 @@ import Router from 'vue-router'
 
 const Home = resolve => require(['@/views/Home'], resolve)
 const WubiTable = resolve => require(['@/views/WubiTable'], resolve)
+const ShuangpinTable = resolve => require(['@/views/ShuangpinTable'], resolve)
+const Hand = resolve => require(['@/views/Hand'], resolve)
 const Type = resolve => require(['@/views/Type'], resolve)
+const Keyboard = resolve => require(['@/views/Keyboard'], resolve)
+const KeyboardTyping = resolve => require(['@/views/KeyboardTyping'], resolve)
 const TypeHelp = resolve => require(['@/views/TypeHelp'], resolve)
 const About = resolve => require(['@/views/About'], resolve)
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
@@ -20,6 +24,14 @@ let routes = [
         component: WubiTable
     },
     {
+        path: '/shuangpin/table',
+        component: ShuangpinTable
+    },
+    {
+        path: '/hand',
+        component: Hand
+    },
+    {
         path: '/type',
         component: Type
     },
@@ -30,6 +42,14 @@ let routes = [
     {
         path: '/about',
         component: About
+    },
+    {
+        path: '/keyboard',
+        component: Keyboard
+    },
+    {
+        path: '/keyboard_typing',
+        component: KeyboardTyping
     },
     {
         path: '*',
