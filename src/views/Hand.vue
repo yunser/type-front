@@ -1,6 +1,8 @@
 <template>
     <my-page title="标准键位指法图">
-        <img class="img" src="/static/img/hand.png">
+        <div class="common-container container">
+            <img class="img" src="/static/img/hand.png">
+        </div>
     </my-page>
 </template>
 

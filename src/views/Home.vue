@@ -1,6 +1,8 @@
 <template>
     <my-page title="打字" :page="page">
-        <app-list :data="groups" />
+        <div class="common-container container">
+            <app-list :data="groups" />
+        </div>
     </my-page>
 </template>
 
@@ -109,8 +111,7 @@
 @import '../scss/var';
 
 .container {
-    max-width: 840px;
-    margin: 0 auto;
+    // max-width: 840px;
 }
 .sub-header {
     margin-bottom: 16px;

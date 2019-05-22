@@ -1,147 +1,149 @@
 <template>
     <my-page title="键盘指法练习" :page="page">
-        <div id="container">
-            <div id="content">
-                <div id="keyboard">
-                    <div id="art_text" class="line line-top">
-                        <div class="key b_on">
-                            <ul>
-                                <li>a</li>
-                            </ul>
+        <div class="common-container container">
+            <div id="container">
+                <div id="content">
+                    <div id="keyboard">
+                        <div id="art_text" class="line line-top">
+                            <div class="key b_on">
+                                <ul>
+                                    <li>a</li>
+                                </ul>
+                            </div>
+                            <div class="key b_alt">
+                                <ul><li>s</li></ul></div>
+                            <div class="key b_alt"><ul><li>d</li></ul></div>
+                            <div class="key b_alt"><ul><li>f</li></ul></div>
+                            <div class="key b_alt"><ul><li>g</li></ul>
+                            </div>
                         </div>
-                        <div class="key b_alt">
-                            <ul><li>s</li></ul></div>
-                        <div class="key b_alt"><ul><li>d</li></ul></div>
-                        <div class="key b_alt"><ul><li>f</li></ul></div>
-                        <div class="key b_alt"><ul><li>g</li></ul>
+                        <div class="line">
+                            <div id="a_96" class="key b1"><ul><li>~</li><li>`</li></ul></div>
+                            <div id="a_49" class="key b1"><ul><li>!</li><li>1</li></ul></div>
+                            <div id="a_50" class="key b2"><ul><li>@</li><li>2</li></ul></div>
+                            <div id="a_51" class="key b1"><ul><li>#</li><li>3</li></ul></div>
+                            <div id="a_52" class="key b2"><ul><li>$</li><li>4</li></ul></div>
+                            <div id="a_53" class="key b2"><ul><li>%</li><li>5</li></ul></div>
+                            <div id="a_54" class="key b2"><ul><li>^</li><li>6</li></ul></div>
+                            <div id="a_55" class="key b2"><ul><li>&amp;</li><li>7</li></ul></div>
+                            <div id="a_56" class="key b1"><ul><li>*</li><li>8</li></ul></div>
+                            <div id="a_57" class="key b2"><ul><li>(</li><li>9</li></ul></div>
+                            <div id="a_48" class="key b1"><ul><li>)</li><li>0</li></ul></div>
+                            <div id="a_45" class="key b1"><ul><li>—</li><li>-</li></ul></div>
+                            <div id="a_61" class="key b1"><ul><li>+</li><li>=</li></ul></div>
+                            <div id="a_8" class="key key-backspace"><ul><li>Backspace</li></ul></div>
                         </div>
+                        <div class="line">
+                            <div id="a_9" class="key key-tab"><div class="key-text">Tab</div></div>
+                            <div id="a_113" class="key b1"><ul><li>Q</li></ul></div>
+                            <div id="a_119" class="key b2"><ul><li>W</li></ul></div>
+                            <div id="a_101" class="key b1"><ul><li>E</li></ul></div>
+                            <div id="a_114" class="key b2"><ul><li>R</li></ul></div>
+                            <div id="a_116" class="key b2"><ul><li>T</li></ul></div>
+                            <div id="a_121" class="key b2"><ul><li>Y</li></ul></div>
+                            <div id="a_117" class="key b2"><ul><li>U</li></ul></div>
+                            <div id="a_105" class="key b1"><ul><li>I</li></ul></div>
+                            <div id="a_111" class="key b2"><ul><li>O</li></ul></div>
+                            <div id="a_112" class="key b1"><ul><li>P</li></ul></div>
+                            <div id="a_91" class="key b1"><ul><li>{</li><li>[</li></ul></div>
+                            <div id="a_93" class="key b1"><ul><li>}</li><li>]</li></ul></div>
+                            <div id="a_92" class="key key-tab"><ul><li>|</li><li>&#92;</li></ul></div>
+                        </div>
+                        <div class="line">
+                            <div id="a_20" class="key key-lock"><ul><li>Caps Lock</li></ul></div>
+                            <div id="a_97" class="key b1"><ul><li>A</li></ul></div>
+                            <div id="a_115" class="key b2"><ul><li>S</li></ul></div>
+                            <div id="a_100" class="key b1"><ul><li>D</li></ul></div>
+                            <div id="a_102" class="key b2"><ul><li>F</li><li class="fj">&nbsp;</li></ul></div>
+                            <div id="a_103" class="key b2"><ul><li>G</li></ul></div>
+                            <div id="a_104" class="key b2"><ul><li>H</li></ul></div>
+                            <div id="a_106" class="key b2"><ul><li>J</li><li class="fj">&nbsp;</li></ul></div>
+                            <div id="a_107" class="key b1"><ul><li>K</li></ul></div>
+                            <div id="a_108" class="key b2"><ul><li>L</li></ul></div>
+                            <div id="a_59" class="key b1"><ul><li>:</li><li>;</li></ul></div>
+                            <div id="a_39" class="key b1"><ul><li>"</li><li>'</li></ul></div>
+                            <div id="a_13" class="key key-enter"><ul><li>Enter</li></ul></div>
+                        </div>
+                        <div class="line">
+                            <div id="a_991" class="key b_shift"><ul><li>Shift</li></ul></div>
+                            <div id="a_122" class="key b1"><ul><li>Z</li></ul></div>
+                            <div id="a_120" class="key b2"><ul><li>X</li></ul></div>
+                            <div id="a_99" class="key b1"><ul><li>C</li></ul></div>
+                            <div id="a_118" class="key b2"><ul><li>V</li></ul></div>
+                            <div id="a_98" class="key b2"><ul><li>B</li></ul></div>
+                            <div id="a_110" class="key b2"><ul><li>N</li></ul></div>
+                            <div id="a_109" class="key b2"><ul><li>M</li></ul></div>
+                            <div id="a_44" class="key b1"><ul><li>&lt;</li><li>,</li></ul></div>
+                            <div id="a_46" class="key b2"><ul><li>&gt;</li><li>.</li></ul></div>
+                            <div id="a_47" class="key b1"><ul><li>?</li><li>/</li></ul></div>
+                            <div id="a_992" class="key key-shift"><ul><li>Shift</li></ul></div>
+                        </div>
+                        <div class="line">
+                            <div class="key key-ctrl-left"><ul><li>Ctrl</li></ul></div>
+                            <div class="key key-win"><ul></ul></div>
+                            <div class="key b_alt"><ul><li>Alt</li></ul></div>
+                            <div id="a_32" class="key b_space"><ul><li>&nbsp;</li></ul></div>
+                            <div class="key b_alt"><ul><li>Alt</li></ul></div>
+                            <div class="key key-win"><ul></ul></div>
+                            <div class="key key-mouse"><ul></ul></div>
+                            <div class="key key-ctrl-right"><ul><li>Ctrl</li></ul></div>
+                        </div>
+                        <div class="clear"></div>
                     </div>
-                    <div class="line">
-                        <div id="a_96" class="key b1"><ul><li>~</li><li>`</li></ul></div>
-                        <div id="a_49" class="key b1"><ul><li>!</li><li>1</li></ul></div>
-                        <div id="a_50" class="key b2"><ul><li>@</li><li>2</li></ul></div>
-                        <div id="a_51" class="key b1"><ul><li>#</li><li>3</li></ul></div>
-                        <div id="a_52" class="key b2"><ul><li>$</li><li>4</li></ul></div>
-                        <div id="a_53" class="key b2"><ul><li>%</li><li>5</li></ul></div>
-                        <div id="a_54" class="key b2"><ul><li>^</li><li>6</li></ul></div>
-                        <div id="a_55" class="key b2"><ul><li>&amp;</li><li>7</li></ul></div>
-                        <div id="a_56" class="key b1"><ul><li>*</li><li>8</li></ul></div>
-                        <div id="a_57" class="key b2"><ul><li>(</li><li>9</li></ul></div>
-                        <div id="a_48" class="key b1"><ul><li>)</li><li>0</li></ul></div>
-                        <div id="a_45" class="key b1"><ul><li>—</li><li>-</li></ul></div>
-                        <div id="a_61" class="key b1"><ul><li>+</li><li>=</li></ul></div>
-                        <div id="a_8" class="key key-backspace"><ul><li>Backspace</li></ul></div>
-                    </div>
-                    <div class="line">
-                        <div id="a_9" class="key key-tab"><div class="key-text">Tab</div></div>
-                        <div id="a_113" class="key b1"><ul><li>Q</li></ul></div>
-                        <div id="a_119" class="key b2"><ul><li>W</li></ul></div>
-                        <div id="a_101" class="key b1"><ul><li>E</li></ul></div>
-                        <div id="a_114" class="key b2"><ul><li>R</li></ul></div>
-                        <div id="a_116" class="key b2"><ul><li>T</li></ul></div>
-                        <div id="a_121" class="key b2"><ul><li>Y</li></ul></div>
-                        <div id="a_117" class="key b2"><ul><li>U</li></ul></div>
-                        <div id="a_105" class="key b1"><ul><li>I</li></ul></div>
-                        <div id="a_111" class="key b2"><ul><li>O</li></ul></div>
-                        <div id="a_112" class="key b1"><ul><li>P</li></ul></div>
-                        <div id="a_91" class="key b1"><ul><li>{</li><li>[</li></ul></div>
-                        <div id="a_93" class="key b1"><ul><li>}</li><li>]</li></ul></div>
-                        <div id="a_92" class="key key-tab"><ul><li>|</li><li>&#92;</li></ul></div>
-                    </div>
-                    <div class="line">
-                        <div id="a_20" class="key key-lock"><ul><li>Caps Lock</li></ul></div>
-                        <div id="a_97" class="key b1"><ul><li>A</li></ul></div>
-                        <div id="a_115" class="key b2"><ul><li>S</li></ul></div>
-                        <div id="a_100" class="key b1"><ul><li>D</li></ul></div>
-                        <div id="a_102" class="key b2"><ul><li>F</li><li class="fj">&nbsp;</li></ul></div>
-                        <div id="a_103" class="key b2"><ul><li>G</li></ul></div>
-                        <div id="a_104" class="key b2"><ul><li>H</li></ul></div>
-                        <div id="a_106" class="key b2"><ul><li>J</li><li class="fj">&nbsp;</li></ul></div>
-                        <div id="a_107" class="key b1"><ul><li>K</li></ul></div>
-                        <div id="a_108" class="key b2"><ul><li>L</li></ul></div>
-                        <div id="a_59" class="key b1"><ul><li>:</li><li>;</li></ul></div>
-                        <div id="a_39" class="key b1"><ul><li>"</li><li>'</li></ul></div>
-                        <div id="a_13" class="key key-enter"><ul><li>Enter</li></ul></div>
-                    </div>
-                    <div class="line">
-                        <div id="a_991" class="key b_shift"><ul><li>Shift</li></ul></div>
-                        <div id="a_122" class="key b1"><ul><li>Z</li></ul></div>
-                        <div id="a_120" class="key b2"><ul><li>X</li></ul></div>
-                        <div id="a_99" class="key b1"><ul><li>C</li></ul></div>
-                        <div id="a_118" class="key b2"><ul><li>V</li></ul></div>
-                        <div id="a_98" class="key b2"><ul><li>B</li></ul></div>
-                        <div id="a_110" class="key b2"><ul><li>N</li></ul></div>
-                        <div id="a_109" class="key b2"><ul><li>M</li></ul></div>
-                        <div id="a_44" class="key b1"><ul><li>&lt;</li><li>,</li></ul></div>
-                        <div id="a_46" class="key b2"><ul><li>&gt;</li><li>.</li></ul></div>
-                        <div id="a_47" class="key b1"><ul><li>?</li><li>/</li></ul></div>
-                        <div id="a_992" class="key key-shift"><ul><li>Shift</li></ul></div>
-                    </div>
-                    <div class="line">
-                        <div class="key key-ctrl-left"><ul><li>Ctrl</li></ul></div>
-                        <div class="key key-win"><ul></ul></div>
-                        <div class="key b_alt"><ul><li>Alt</li></ul></div>
-                        <div id="a_32" class="key b_space"><ul><li>&nbsp;</li></ul></div>
-                        <div class="key b_alt"><ul><li>Alt</li></ul></div>
-                        <div class="key key-win"><ul></ul></div>
-                        <div class="key key-mouse"><ul></ul></div>
-                        <div class="key key-ctrl-right"><ul><li>Ctrl</li></ul></div>
-                    </div>
-                    <div class="clear"></div>
                 </div>
             </div>
+            <ul class="info-list">
+                <li class="item">
+                    <ui-icon class="icon" value="access_time" />
+                    时间：{{ result.time }}</li>
+                <li class="item">
+                    <ui-icon class="icon" value="access_time" />
+                    速度：{{ result.speed }} KMP</li>
+                <li class="item">
+                    <ui-icon class="icon" value="check_circle" />
+                    正确率：{{ result.right }} %</li>
+                <li class="item">
+                    <ui-icon class="icon" value="access_time" />
+                    进度：{{ result.progress }} %</li>
+            </ul>
+            <select class="select" id="jump_menu">
+                <option value="#">☆☆☆ 选择练习课程 ☆☆☆</option>
+                <option value="1" selected="">1.键盘布局(KeyBoard Layout)
+                </option>
+                <option value="2">2.手指分区练习
+                </option>
+                <option value="3">3.键位纠错练习
+                </option>
+                <option value="4">4.键位课程一：asdf jkl；
+                </option>
+                <option value="5">5.键位课程二：e i
+                </option>
+                <option value="6">6.键位课程三：r u
+                </option>
+                <option value="7">7.键位课程四：g h
+                </option>
+                <option value="8">8.键位课程五：C ,
+                </option>
+                <option value="9">9.键位课程六：y t
+                </option>
+                <option value="10">10.键位课程七：m v
+                </option>
+                <option value="11">11.键位课程八：b n
+                </option>
+                <option value="12">12.键位课程九：o w
+                </option>
+                <option value="13">13.键位课程十：p q z
+                </option>
+                <option value="14">14.键位课程11：x .
+                </option>
+                <option value="15">15.键位课程13:0-9
+                </option>
+                <option value="16">16.键位课程12：Capital-大写
+                </option>
+                <option value="17">17.键位课程14：英文标点符号
+                </option>
+            </select>
         </div>
-        <ul class="info-list">
-            <li class="item">
-                <ui-icon class="icon" value="access_time" />
-                时间：{{ result.time }}</li>
-            <li class="item">
-                <ui-icon class="icon" value="access_time" />
-                速度：{{ result.speed }} KMP</li>
-            <li class="item">
-                <ui-icon class="icon" value="check_circle" />
-                正确率：{{ result.right }} %</li>
-            <li class="item">
-                <ui-icon class="icon" value="access_time" />
-                进度：{{ result.progress }} %</li>
-        </ul>
-        <select class="select" id="jump_menu">
-            <option value="#">☆☆☆ 选择练习课程 ☆☆☆</option>
-            <option value="1" selected="">1.键盘布局(KeyBoard Layout)
-            </option>
-            <option value="2">2.手指分区练习
-            </option>
-            <option value="3">3.键位纠错练习
-            </option>
-            <option value="4">4.键位课程一：asdf jkl；
-            </option>
-            <option value="5">5.键位课程二：e i
-            </option>
-            <option value="6">6.键位课程三：r u
-            </option>
-            <option value="7">7.键位课程四：g h
-            </option>
-            <option value="8">8.键位课程五：C ,
-            </option>
-            <option value="9">9.键位课程六：y t
-            </option>
-            <option value="10">10.键位课程七：m v
-            </option>
-            <option value="11">11.键位课程八：b n
-            </option>
-            <option value="12">12.键位课程九：o w
-            </option>
-            <option value="13">13.键位课程十：p q z
-            </option>
-            <option value="14">14.键位课程11：x .
-            </option>
-            <option value="15">15.键位课程13:0-9
-            </option>
-            <option value="16">16.键位课程12：Capital-大写
-            </option>
-            <option value="17">17.键位课程14：英文标点符号
-            </option>
-        </select>
     </my-page>
 </template>
 
